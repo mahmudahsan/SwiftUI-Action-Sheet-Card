@@ -21,6 +21,7 @@
 		5154DBB225E2346E0068C6E0 /* ActionSheetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154DBA825E2346E0068C6E0 /* ActionSheetCard.swift */; };
 		5154DBB325E2346E0068C6E0 /* package.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 5154DBAB25E2346E0068C6E0 /* package.xcworkspace */; };
 		5154DBB425E2346E0068C6E0 /* xcschememanagement.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5154DBAF25E2346E0068C6E0 /* xcschememanagement.plist */; };
+		5154DBCA25E2365D0068C6E0 /* ActionSheetCardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154DBC925E2365D0068C6E0 /* ActionSheetCardItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		5154DBA825E2346E0068C6E0 /* ActionSheetCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetCard.swift; sourceTree = "<group>"; };
 		5154DBAB25E2346E0068C6E0 /* package.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = package.xcworkspace; sourceTree = "<group>"; };
 		5154DBAF25E2346E0068C6E0 /* xcschememanagement.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xcschememanagement.plist; sourceTree = "<group>"; };
+		5154DBC925E2365D0068C6E0 /* ActionSheetCardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetCardItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		5154DBA525E2346E0068C6E0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				5154DBC925E2365D0068C6E0 /* ActionSheetCardItem.swift */,
 				5154DBA825E2346E0068C6E0 /* ActionSheetCard.swift */,
 				5154DBA625E2346E0068C6E0 /* GreyOutOfFocusView.swift */,
 				5154DBA725E2346E0068C6E0 /* .gitignore */,
@@ -383,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5154DBCA25E2365D0068C6E0 /* ActionSheetCardItem.swift in Sources */,
 				514E87D625E22C370019BDE9 /* ContentView.swift in Sources */,
 				5154DBB225E2346E0068C6E0 /* ActionSheetCard.swift in Sources */,
 				5154DBB025E2346E0068C6E0 /* GreyOutOfFocusView.swift in Sources */,

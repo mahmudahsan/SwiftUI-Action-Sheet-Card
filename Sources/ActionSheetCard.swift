@@ -4,62 +4,22 @@
 import SwiftUI
 import Combine
 
-public struct ActionSheetCardItem: View {
-    let id = UUID()
-    let icon: String // SF Symbol
-    let label: String
-    let callback: (() -> ())?
-    
-    public init(
-        icon: String,
-        label: String,
-        callback: (() -> ())? = nil
-    ) {
-        self.icon = icon
-        self.label = label
-        self.callback = callback
-    }
-    
-    var buttonView: some View {
-        HStack {
-            Image(systemName: icon)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width:19, height: 19)
-                .padding(.vertical)
-                .padding(.horizontal, 10)
-            Text(label)
-                .font(.headline)
-            Spacer()
-        }
-    }
-    
-    public var body: some View {
-        Group {
-            if let callback = callback {
-                Button(action: {
-                    callback()
-                }) {
-                    buttonView
-                        .foregroundColor(Color.primary)
-                }
-            }
-            else {
-                buttonView
-                    .foregroundColor(Color.gray)
-            }
-        }
-    }
-}
-
 public struct ActionSheetCard: View {
     @State var offset = UIScreen.main.bounds.height
     
-    @Binding public var isShowing: Bool
-    public let items: [ActionSheetCardItem]
+    @Binding var isShowing: Bool
+    let items: [ActionSheetCardItem]
     
     let heightToDisappear = UIScreen.main.bounds.height
     let cellHeight: CGFloat = 50
+    
+    public init(
+        isShowing: Binding<Bool>,
+        items: [ActionSheetCardItem]
+    ) {
+        _isShowing = isShowing
+        self.items = items
+    }
     
     func hide() {
         offset = heightToDisappear
