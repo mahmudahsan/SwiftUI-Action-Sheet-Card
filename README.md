@@ -16,12 +16,15 @@ A SwiftUI based custom sheet card to reuse in iOS application.
 
  <p align="center">
     <img src="Resources/demo.gif" width="320" alt="Demo" />
+    <img src="Resources/demo-screen.png" width="320" alt="Screenshot" border="1">
 </p>
 
 ## Features
 - Customizable items within the sheet card
 - Font can be changed
 - Foreground and background color can be changed
+- Out of focus area marked with transparent black color
+- Tapping out of focus area or other area will hide the sheet
 
 ## How to use
 
@@ -98,7 +101,21 @@ ActionSheetCard(isShowing: $showingSheet,
                             ActionSheetCardItem(sfSymbolName: "record.circle", label: "Record")
                         ])
 ```
-4. Use the sheet in your main view
+4. Pass a callback to define the item, so when it is tapped the callback will execute
+```Swift
+ActionSheetCardItem(sfSymbolName: "stop", label: "Stop", foregrounColor: Color.red) {
+    // Callback
+    print("Stop Tapped")
+    showingSheet = false
+}
+```
+5. If there is no callback, the item will be in-active state
+```Swift 
+ // No Callback
+ ActionSheetCardItem(sfSymbolName: "record.circle", label: "Record")
+```
+
+6. Use the sheet in your main view
 ```Swift
 var body: some View {
         ZStack {
