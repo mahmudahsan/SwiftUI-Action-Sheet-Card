@@ -86,7 +86,7 @@ struct ContentView: View {
 #### Steps
 1. Add `import ActionSheetCard` in your SwiftUI View
 2. Define a `@State var showingSheet = false` state
-3. Create the sheet view and pass the state and define some items
+3. Create the sheet view and pass the state as binding and define some items for the sheet
 ```Swift
 ActionSheetCard(isShowing: $showingSheet,
                         items: [
@@ -126,6 +126,29 @@ var body: some View {
 ```
 
 **For more examples open `/Demo/Demo.xcodeproj`**
+
+7. How to Change color and fonts of the sheet items
+```Swift
+// If font and color is not provide, default values will be used
+ActionSheetCardItem(
+        label: "Stop",
+        sfSymbolName: "stop",
+        labelFont: Font.largeTitle,
+        foregrounColor: Color.red
+    ) {
+        print("Stop Tapped")
+        showingSheet = false
+    },
+```
+
+8. How to Change color of the sheet card background
+```Swift
+ActionSheetCard(
+    isShowing: $showingSheet,
+    items: [],
+    backgroundColor: Color.red
+)
+```
 
 ## Questions or feedback?
 
