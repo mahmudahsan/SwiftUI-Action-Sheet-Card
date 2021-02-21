@@ -134,7 +134,8 @@ ActionSheetCardItem(
         label: "Stop",
         sfSymbolName: "stop",
         labelFont: Font.largeTitle,
-        foregrounColor: Color.red
+        foregrounColor: Color.red,
+        foregroundInactiveColor: Color.gray
     ) {
         print("Stop Tapped")
         showingSheet = false
