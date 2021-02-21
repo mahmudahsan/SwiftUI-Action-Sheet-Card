@@ -115,7 +115,7 @@ ActionSheetCardItem(sfSymbolName: "stop", label: "Stop", foregrounColor: Color.r
  ActionSheetCardItem(sfSymbolName: "record.circle", label: "Record")
 ```
 
-6. Use the sheet in your main view
+6. Use the sheet in your main view within a `ZStack`, otherwise the black background view will not show correctly
 ```Swift
 var body: some View {
         ZStack {
