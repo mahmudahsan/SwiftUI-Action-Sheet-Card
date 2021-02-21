@@ -30,6 +30,7 @@ public struct ActionSheetCardItem: View {
     let label: String
     let labelFont: Font
     let foregrounColor: Color
+    let foregroundInactiveColor: Color
     let callback: (() -> ())?
     
     public init(
@@ -37,12 +38,14 @@ public struct ActionSheetCardItem: View {
         label: String,
         labelFont: Font = Font.headline,
         foregrounColor: Color = Color.primary,
+        foregroundInactiveColor: Color = Color.gray,
         callback: (() -> ())? = nil
     ) {
         self.sfSymbolName = sfSymbolName
         self.label = label
         self.labelFont = labelFont
         self.foregrounColor = foregrounColor
+        self.foregroundInactiveColor = foregroundInactiveColor
         self.callback = callback
     }
     
@@ -62,7 +65,6 @@ public struct ActionSheetCardItem: View {
             
             Spacer()
         }
-        .foregroundColor(foregrounColor)
     }
     
     public var body: some View {
@@ -72,12 +74,12 @@ public struct ActionSheetCardItem: View {
                     callback()
                 }) {
                     buttonView
-                        .foregroundColor(Color.primary)
+                        .foregroundColor(foregrounColor)
                 }
             }
             else {
                 buttonView
-                    .foregroundColor(Color.gray)
+                    .foregroundColor(foregroundInactiveColor)
             }
         }
     }
