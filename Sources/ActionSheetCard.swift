@@ -10,7 +10,7 @@ public struct ActionSheetCardItem: View {
     let label: String
     let callback: (() -> ())?
     
-    init(
+    public init(
         icon: String,
         label: String,
         callback: (() -> ())? = nil

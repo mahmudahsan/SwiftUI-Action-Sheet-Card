@@ -3,11 +3,11 @@
 
 import SwiftUI
 
-struct GreyOutOfFocusView: View {
+public struct GreyOutOfFocusView: View {
     let opacity: CGFloat
     let callback: (() -> ())?
     
-    init(
+    public init(
         opacity: CGFloat = 0.7,
         callback: (() -> ())? = nil
     ) {
@@ -26,7 +26,7 @@ struct GreyOutOfFocusView: View {
             .ignoresSafeArea()
     }
     
-    var body: some View {
+    public var body: some View {
         greyView
     }
 }
