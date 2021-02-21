@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ActionSheetCard
 
 struct ContentView: View {
     @State var showingSheet = false
