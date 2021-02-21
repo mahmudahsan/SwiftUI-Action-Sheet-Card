@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Shared
 //
-//  Created by Mahmud Ahsan on 21/2/21.
+//  Created by Mahmud Ahsan
 //
 
 import SwiftUI
@@ -26,38 +26,24 @@ struct ContentView: View {
     }
     
     var sheetView: some View {
-        VStack {
-            Spacer()
-            ActionSheetCard(isShowing: $showingSheet,
-                            items: [
-                                ActionSheetCardItem(icon: "play", label: "Play") {
-                                    print("Play Tapped")
-                                    showingSheet = false
-                                },
-                                ActionSheetCardItem(icon: "stop", label: "Stop") {
-                                    print("Stop Tapped")
-                                    showingSheet = false
-                                },
-                                ActionSheetCardItem(icon: "record.circle", label: "Record")
-                            ])
-        }
-    }
-    
-    var sheetContainerView: some View {
-        Group {
-            if showingSheet {
-                GreyOutOfFocusView {
-                    self.showingSheet = false
-                }
-                sheetView
-            }
-        }
+        ActionSheetCard(isShowing: $showingSheet,
+                        items: [
+                            ActionSheetCardItem(sfSymbolName: "play", label: "Play") {
+                                print("Play Tapped")
+                                showingSheet = false
+                            },
+                            ActionSheetCardItem(sfSymbolName: "stop", label: "Stop", foregrounColor: Color.red) {
+                                print("Stop Tapped")
+                                showingSheet = false
+                            },
+                            ActionSheetCardItem(sfSymbolName: "record.circle", label: "Record")
+                        ])
     }
     
     var body: some View {
         ZStack {
             content
-            sheetContainerView
+            sheetView
         }
     }
 }

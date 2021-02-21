@@ -167,8 +167,8 @@
 		5154DBA525E2346E0068C6E0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5154DBC925E2365D0068C6E0 /* ActionSheetCardItem.swift */,
 				5154DBA825E2346E0068C6E0 /* ActionSheetCard.swift */,
+				5154DBC925E2365D0068C6E0 /* ActionSheetCardItem.swift */,
 				5154DBA625E2346E0068C6E0 /* GreyOutOfFocusView.swift */,
 				5154DBA725E2346E0068C6E0 /* .gitignore */,
 				5154DBA925E2346E0068C6E0 /* .swiftpm */,
