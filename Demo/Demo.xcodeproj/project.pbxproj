@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,12 @@
 		514E87D725E22C370019BDE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514E87AC25E22C350019BDE9 /* ContentView.swift */; };
 		514E87D825E22C370019BDE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514E87AD25E22C370019BDE9 /* Assets.xcassets */; };
 		514E87D925E22C370019BDE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514E87AD25E22C370019BDE9 /* Assets.xcassets */; };
+		5154DBA025E2331C0068C6E0 /* ActionSheetCard in Frameworks */ = {isa = PBXBuildFile; productRef = 5154DB9F25E2331C0068C6E0 /* ActionSheetCard */; };
+		5154DBB025E2346E0068C6E0 /* GreyOutOfFocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154DBA625E2346E0068C6E0 /* GreyOutOfFocusView.swift */; };
+		5154DBB125E2346E0068C6E0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5154DBA725E2346E0068C6E0 /* .gitignore */; };
+		5154DBB225E2346E0068C6E0 /* ActionSheetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154DBA825E2346E0068C6E0 /* ActionSheetCard.swift */; };
+		5154DBB325E2346E0068C6E0 /* package.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 5154DBAB25E2346E0068C6E0 /* package.xcworkspace */; };
+		5154DBB425E2346E0068C6E0 /* xcschememanagement.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5154DBAF25E2346E0068C6E0 /* xcschememanagement.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,11 @@
 		514E87CD25E22C370019BDE9 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		514E87D125E22C370019BDE9 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		514E87D325E22C370019BDE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5154DBA625E2346E0068C6E0 /* GreyOutOfFocusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreyOutOfFocusView.swift; sourceTree = "<group>"; };
+		5154DBA725E2346E0068C6E0 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5154DBA825E2346E0068C6E0 /* ActionSheetCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetCard.swift; sourceTree = "<group>"; };
+		5154DBAB25E2346E0068C6E0 /* package.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = package.xcworkspace; sourceTree = "<group>"; };
+		5154DBAF25E2346E0068C6E0 /* xcschememanagement.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = xcschememanagement.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5154DBA025E2331C0068C6E0 /* ActionSheetCard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +98,7 @@
 		514E87A525E22C340019BDE9 = {
 			isa = PBXGroup;
 			children = (
+				5154DBA525E2346E0068C6E0 /* Sources */,
 				514E87AA25E22C350019BDE9 /* Shared */,
 				514E87B425E22C370019BDE9 /* iOS */,
 				514E87BB25E22C370019BDE9 /* macOS */,
@@ -151,6 +164,59 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		5154DBA525E2346E0068C6E0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5154DBA825E2346E0068C6E0 /* ActionSheetCard.swift */,
+				5154DBA625E2346E0068C6E0 /* GreyOutOfFocusView.swift */,
+				5154DBA725E2346E0068C6E0 /* .gitignore */,
+				5154DBA925E2346E0068C6E0 /* .swiftpm */,
+			);
+			name = Sources;
+			path = ../Sources;
+			sourceTree = "<group>";
+		};
+		5154DBA925E2346E0068C6E0 /* .swiftpm */ = {
+			isa = PBXGroup;
+			children = (
+				5154DBAA25E2346E0068C6E0 /* xcode */,
+			);
+			path = .swiftpm;
+			sourceTree = "<group>";
+		};
+		5154DBAA25E2346E0068C6E0 /* xcode */ = {
+			isa = PBXGroup;
+			children = (
+				5154DBAB25E2346E0068C6E0 /* package.xcworkspace */,
+				5154DBAC25E2346E0068C6E0 /* xcuserdata */,
+			);
+			path = xcode;
+			sourceTree = "<group>";
+		};
+		5154DBAC25E2346E0068C6E0 /* xcuserdata */ = {
+			isa = PBXGroup;
+			children = (
+				5154DBAD25E2346E0068C6E0 /* mahmud.xcuserdatad */,
+			);
+			path = xcuserdata;
+			sourceTree = "<group>";
+		};
+		5154DBAD25E2346E0068C6E0 /* mahmud.xcuserdatad */ = {
+			isa = PBXGroup;
+			children = (
+				5154DBAE25E2346E0068C6E0 /* xcschemes */,
+			);
+			path = mahmud.xcuserdatad;
+			sourceTree = "<group>";
+		};
+		5154DBAE25E2346E0068C6E0 /* xcschemes */ = {
+			isa = PBXGroup;
+			children = (
+				5154DBAF25E2346E0068C6E0 /* xcschememanagement.plist */,
+			);
+			path = xcschemes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,6 +233,9 @@
 			dependencies = (
 			);
 			name = "Demo (iOS)";
+			packageProductDependencies = (
+				5154DB9F25E2331C0068C6E0 /* ActionSheetCard */,
+			);
 			productName = "Demo (iOS)";
 			productReference = 514E87B225E22C370019BDE9 /* Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -258,6 +327,9 @@
 				Base,
 			);
 			mainGroup = 514E87A525E22C340019BDE9;
+			packageReferences = (
+				5154DB9E25E2331C0068C6E0 /* XCRemoteSwiftPackageReference "SwiftUI-Action-Sheet-Card" */,
+			);
 			productRefGroup = 514E87B325E22C370019BDE9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -275,7 +347,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5154DBB325E2346E0068C6E0 /* package.xcworkspace in Resources */,
+				5154DBB125E2346E0068C6E0 /* .gitignore in Resources */,
 				514E87D825E22C370019BDE9 /* Assets.xcassets in Resources */,
+				5154DBB425E2346E0068C6E0 /* xcschememanagement.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +384,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				514E87D625E22C370019BDE9 /* ContentView.swift in Sources */,
+				5154DBB225E2346E0068C6E0 /* ActionSheetCard.swift in Sources */,
+				5154DBB025E2346E0068C6E0 /* GreyOutOfFocusView.swift in Sources */,
 				514E87D425E22C370019BDE9 /* DemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -686,6 +763,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5154DB9E25E2331C0068C6E0 /* XCRemoteSwiftPackageReference "SwiftUI-Action-Sheet-Card" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mahmudahsan/SwiftUI-Action-Sheet-Card";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5154DB9F25E2331C0068C6E0 /* ActionSheetCard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5154DB9E25E2331C0068C6E0 /* XCRemoteSwiftPackageReference "SwiftUI-Action-Sheet-Card" */;
+			productName = ActionSheetCard;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 514E87A625E22C340019BDE9 /* Project object */;
 }

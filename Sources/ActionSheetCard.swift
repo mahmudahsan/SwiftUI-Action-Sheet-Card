@@ -54,8 +54,9 @@ public struct ActionSheetCardItem: View {
 
 public struct ActionSheetCard: View {
     @State var offset = UIScreen.main.bounds.height
+    
     @Binding public var isShowing: Bool
-    let items: [ActionSheetCardItem]
+    public let items: [ActionSheetCardItem]
     
     let heightToDisappear = UIScreen.main.bounds.height
     let cellHeight: CGFloat = 50
