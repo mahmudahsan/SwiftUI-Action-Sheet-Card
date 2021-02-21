@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,6 @@
 		514E87D725E22C370019BDE9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514E87AC25E22C350019BDE9 /* ContentView.swift */; };
 		514E87D825E22C370019BDE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514E87AD25E22C370019BDE9 /* Assets.xcassets */; };
 		514E87D925E22C370019BDE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514E87AD25E22C370019BDE9 /* Assets.xcassets */; };
-		5154DBA025E2331C0068C6E0 /* ActionSheetCard in Frameworks */ = {isa = PBXBuildFile; productRef = 5154DB9F25E2331C0068C6E0 /* ActionSheetCard */; };
 		5154DBB025E2346E0068C6E0 /* GreyOutOfFocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154DBA625E2346E0068C6E0 /* GreyOutOfFocusView.swift */; };
 		5154DBB125E2346E0068C6E0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5154DBA725E2346E0068C6E0 /* .gitignore */; };
 		5154DBB225E2346E0068C6E0 /* ActionSheetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154DBA825E2346E0068C6E0 /* ActionSheetCard.swift */; };
@@ -69,7 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5154DBA025E2331C0068C6E0 /* ActionSheetCard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +235,6 @@
 			);
 			name = "Demo (iOS)";
 			packageProductDependencies = (
-				5154DB9F25E2331C0068C6E0 /* ActionSheetCard */,
 			);
 			productName = "Demo (iOS)";
 			productReference = 514E87B225E22C370019BDE9 /* Demo.app */;
@@ -331,7 +328,6 @@
 			);
 			mainGroup = 514E87A525E22C340019BDE9;
 			packageReferences = (
-				5154DB9E25E2331C0068C6E0 /* XCRemoteSwiftPackageReference "SwiftUI-Action-Sheet-Card" */,
 			);
 			productRefGroup = 514E87B325E22C370019BDE9 /* Products */;
 			projectDirPath = "";
@@ -767,25 +763,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		5154DB9E25E2331C0068C6E0 /* XCRemoteSwiftPackageReference "SwiftUI-Action-Sheet-Card" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mahmudahsan/SwiftUI-Action-Sheet-Card";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5154DB9F25E2331C0068C6E0 /* ActionSheetCard */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5154DB9E25E2331C0068C6E0 /* XCRemoteSwiftPackageReference "SwiftUI-Action-Sheet-Card" */;
-			productName = ActionSheetCard;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 514E87A625E22C340019BDE9 /* Project object */;
 }
