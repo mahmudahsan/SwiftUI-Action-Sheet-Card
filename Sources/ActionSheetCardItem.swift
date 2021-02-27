@@ -84,3 +84,21 @@ public struct ActionSheetCardItem: View {
         }
     }
 }
+
+struct ActionSheetCardItem_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack {
+            Spacer()
+            ActionSheetCardItem(sfSymbolName: "play", label: "Play") {
+                //
+            }
+            
+            ActionSheetCardItem(sfSymbolName: "stop", label: "Stop") {
+                //
+            }
+            
+            ActionSheetCardItem(sfSymbolName: "record.circle", label: "Record")
+            Spacer()
+        }
+    }
+}
