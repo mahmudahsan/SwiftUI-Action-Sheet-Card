@@ -7,9 +7,8 @@
         <img src="https://img.shields.io/badge/spm-compatible-green.svg?style=flat" alt="Swift Package Manager" />
     </a>
     <a href="https://twitter.com/mahmudahsan">
-        <img src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fmahmudahsan%2FSwiftUI-Action-Sheet-Card" alt="Tweet" />
+        <img src="https://img.shields.io/badge/contact%40-mahmudahsan-blue.svg" alt="Twitter: @mahmudahsan" />
     </a>
-    
 </p>
 
 A SwiftUI based custom sheet card to reuse in iOS application.
@@ -134,7 +133,8 @@ ActionSheetCardItem(
         label: "Stop",
         sfSymbolName: "stop",
         labelFont: Font.largeTitle,
-        foregrounColor: Color.red
+        foregrounColor: Color.red,
+        foregroundInactiveColor: Color.gray
     ) {
         print("Stop Tapped")
         showingSheet = false
