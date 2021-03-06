@@ -11,7 +11,8 @@
     </a>
 </p>
 
-A SwiftUI based custom sheet card to reuse in iOS application.
+A SwiftUI based custom sheet card to reuse in iOS application. <br />
+If you want to learn how to build this type of component try [the following tutorial.](https://levelupprogramming.net/swiftui-how-to-create-a-custom-actionsheet-card-view-2c98c2ce463d)
 
  <p align="center">
     <img src="Resources/demo.gif" width="320" alt="Demo" />
