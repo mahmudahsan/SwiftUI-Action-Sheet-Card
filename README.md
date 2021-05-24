@@ -12,7 +12,7 @@
 </p>
 
 A SwiftUI based custom sheet card to reuse in iOS application. <br />
-If you want to learn how to build this type of component try [the following tutorial.](https://levelupprogramming.net/swiftui-how-to-create-a-custom-actionsheet-card-view-2c98c2ce463d)
+If you want to learn how to build this type of component try [the following tutorial.](https://thinkdiff.net/swiftui-how-to-create-a-custom-actionsheet-card-view-2c98c2ce463d)
 
  <p align="center">
     <img src="Resources/demo.gif" width="320" alt="Demo" />
@@ -155,4 +155,4 @@ ActionSheetCard(
 
 - Feel free to [open an issue](https://github.com/mahmudahsan/SwiftUI-Action-Sheet-Card/issues/new)
 - Find me [@mahmudahsan on Twitter](https://twitter.com/mahmudahsan)
-- Read programming articles on [Level Up Programming](https://levelupprogramming.net/)
+- Read programming articles on [Thinkdiff.net](https://thinkdiff.net)
