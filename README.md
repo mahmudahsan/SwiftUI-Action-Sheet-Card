@@ -26,6 +26,9 @@ If you want to learn how to build this type of component try [the following tuto
 - Out of focus area marked with transparent black color
 - Tapping out of focus area or other area will hide the sheet
 
+## Related Code
+- [SwiftUI- Action Sheet Custom View Card](https://github.com/mahmudahsan/SwiftUI-Action-Sheet-Custom-View-Card)
+
 ## How to use
 
 Add this Swift package to your project
