@@ -28,24 +28,29 @@ import Combine
 public struct ActionSheetCard: View {
     @State var offset = UIScreen.main.bounds.height
     @Binding var isShowing: Bool
+    @State var isDragging = false
     
     let items: [ActionSheetCardItem]
     let heightToDisappear = UIScreen.main.bounds.height
     let cellHeight: CGFloat = 50
     let backgroundColor: Color
+    let minimumDragDistanceToHide: CGFloat
     
     public init(
         isShowing: Binding<Bool>,
         items: [ActionSheetCardItem],
-        backgroundColor: Color = Color.white
+        backgroundColor: Color = Color.white,
+        minimumDragDistanceToHide: CGFloat = 150
     ) {
         _isShowing = isShowing
         self.items = items
         self.backgroundColor = backgroundColor
+        self.minimumDragDistanceToHide = minimumDragDistanceToHide
     }
     
     func hide() {
         offset = heightToDisappear
+        isDragging = false
         isShowing = false
     }
         
@@ -69,21 +74,29 @@ public struct ActionSheetCard: View {
         .padding()
     }
     
+    func dragGestureOnChange(_ value: DragGesture.Value) {
+        isDragging = true
+        if value.translation.height > 0 {
+            offset = value.location.y
+            let diff = abs(value.location.y - value.startLocation.y)
+            
+            let conditionOne = diff > minimumDragDistanceToHide
+            let conditionTwo = value.location.y >= 200
+            
+            
+            if conditionOne || conditionTwo {
+                hide()
+            }
+        }
+    }
+    
     var interactiveGesture: some Gesture {
         DragGesture()
             .onChanged({ (value) in
-                if value.translation.height > 0 {
-                    offset = value.location.y
-                }
+                dragGestureOnChange(value)
             })
             .onEnded({ (value) in
-                let diff = abs(offset-value.location.y)
-                if diff > 100 {
-                    hide()
-                }
-                else {
-                    offset = 0
-                }
+                isDragging = false
             })
     }
     
@@ -123,6 +136,16 @@ public struct ActionSheetCard: View {
         }
     }
     
+    func onUpdateIsShowing(_ isShowing: Bool) {
+        if isShowing && isDragging {
+            return
+        }
+        
+        DispatchQueue.main.async {
+            offset = isShowing ? 0 : heightToDisappear
+        }
+    }
+    
     public var body: some View {
         Group {
             if isShowing {
@@ -131,7 +154,7 @@ public struct ActionSheetCard: View {
         }
         .animation(.default)
         .onReceive(Just(isShowing), perform: { isShowing in
-            offset = isShowing ? 0 : heightToDisappear
+            onUpdateIsShowing(isShowing)
         })
     }
 }
