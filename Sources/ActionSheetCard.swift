@@ -36,19 +36,22 @@ public struct ActionSheetCard: View {
     let backgroundColor: Color
     let outOfFocusOpacity: CGFloat
     let minimumDragDistanceToHide: CGFloat
+    let itemsSpacing: CGFloat
     
     public init(
         isShowing: Binding<Bool>,
         items: [ActionSheetCardItem],
         backgroundColor: Color = Color.white,
         outOfFocusOpacity: CGFloat = 0.7,
-        minimumDragDistanceToHide: CGFloat = 150
+        minimumDragDistanceToHide: CGFloat = 150,
+        itemsSpacing: CGFloat = 0
     ) {
         _isShowing = isShowing
         self.items = items
         self.backgroundColor = backgroundColor
         self.outOfFocusOpacity = outOfFocusOpacity
         self.minimumDragDistanceToHide = minimumDragDistanceToHide
+        self.itemsSpacing = itemsSpacing
     }
     
     func hide() {
@@ -66,7 +69,7 @@ public struct ActionSheetCard: View {
     }
     
     var itemsView: some View {
-        VStack {
+        VStack (spacing: itemsSpacing){
             ForEach(0..<items.count) { index in
                 if index > 0 {
                     Divider()
@@ -74,8 +77,8 @@ public struct ActionSheetCard: View {
                 items[index]
                     .frame(height: cellHeight)
             }
+            Text("").frame(height: 40) // Extra empty space
         }
-        .padding()
     }
     
     func dragGestureOnChange(_ value: DragGesture.Value) {
@@ -169,14 +172,16 @@ struct ActionSheetCard_Previews: PreviewProvider {
             Spacer()
             ActionSheetCard(isShowing: .constant(true),
                             items: [
-                                ActionSheetCardItem(sfSymbolName: "play", label: "Play") {
+                                ActionSheetCardItem(systemIconName: "play", label: "Play") {
                                     //
                                 },
-                                ActionSheetCardItem(sfSymbolName: "stop", label: "Stop") {
+                                ActionSheetCardItem(systemIconName: "stop", label: "Stop") {
                                     //
                                 },
-                                ActionSheetCardItem(sfSymbolName: "record.circle", label: "Record")
-                            ])
+                                ActionSheetCardItem(systemIconName: "record.circle", label: "Record")
+                            ],
+                            outOfFocusOpacity: 0.2
+            )
         }
     }
 }
