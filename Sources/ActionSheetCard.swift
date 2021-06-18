@@ -34,17 +34,20 @@ public struct ActionSheetCard: View {
     let heightToDisappear = UIScreen.main.bounds.height
     let cellHeight: CGFloat = 50
     let backgroundColor: Color
+    let outOfFocusOpacity: CGFloat
     let minimumDragDistanceToHide: CGFloat
     
     public init(
         isShowing: Binding<Bool>,
         items: [ActionSheetCardItem],
         backgroundColor: Color = Color.white,
+        outOfFocusOpacity: CGFloat = 0.7,
         minimumDragDistanceToHide: CGFloat = 150
     ) {
         _isShowing = isShowing
         self.items = items
         self.backgroundColor = backgroundColor
+        self.outOfFocusOpacity = outOfFocusOpacity
         self.minimumDragDistanceToHide = minimumDragDistanceToHide
     }
     
@@ -56,9 +59,10 @@ public struct ActionSheetCard: View {
         
     var topHalfMiddleBar: some View {
         Capsule()
-            .frame(width: 130, height: 5)
-            .foregroundColor(Color.gray)
-            .padding(.top, 20)
+            .frame(width: 36, height: 5)
+            .foregroundColor(Color.black)
+            .padding(.vertical, 5.5)
+            .opacity(0.2)
     }
     
     var itemsView: some View {
@@ -103,7 +107,7 @@ public struct ActionSheetCard: View {
     var outOfFocusArea: some View {
         Group {
             if isShowing {
-                GreyOutOfFocusView {
+                GreyOutOfFocusView(opacity: outOfFocusOpacity) {
                     self.isShowing = false
                 }
             }
