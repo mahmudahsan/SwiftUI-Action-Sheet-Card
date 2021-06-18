@@ -28,17 +28,18 @@ struct ContentView: View {
         ActionSheetCard(
             isShowing: $showingSheet,
             items: [
-                ActionSheetCardItem(sfSymbolName: "play", label: "Play") {
+                ActionSheetCardItem(systemIconName: "play", label: "Play") {
                     print("Play Tapped")
                     showingSheet = false
                 },
-                ActionSheetCardItem(sfSymbolName: "stop", label: "Stop", foregrounColor: Color.red) {
+                ActionSheetCardItem(systemIconName: "stop", label: "Stop", foregrounColor: Color.red) {
                     print("Stop Tapped")
                     showingSheet = false
                 },
-                ActionSheetCardItem(sfSymbolName: "record.circle", label: "Record")
+                ActionSheetCardItem(systemIconName: "record.circle", label: "Record")
             ],
-            outOfFocusOpacity: 0.2
+            outOfFocusOpacity: 0.2,
+            itemsSpacing: 2
         )
     }
     
