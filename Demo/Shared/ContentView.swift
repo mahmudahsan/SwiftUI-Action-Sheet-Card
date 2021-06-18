@@ -25,18 +25,21 @@ struct ContentView: View {
     }
     
     var sheetView: some View {
-        ActionSheetCard(isShowing: $showingSheet,
-                        items: [
-                            ActionSheetCardItem(sfSymbolName: "play", label: "Play") {
-                                print("Play Tapped")
-                                showingSheet = false
-                            },
-                            ActionSheetCardItem(sfSymbolName: "stop", label: "Stop", foregrounColor: Color.red) {
-                                print("Stop Tapped")
-                                showingSheet = false
-                            },
-                            ActionSheetCardItem(sfSymbolName: "record.circle", label: "Record")
-                        ])
+        ActionSheetCard(
+            isShowing: $showingSheet,
+            items: [
+                ActionSheetCardItem(sfSymbolName: "play", label: "Play") {
+                    print("Play Tapped")
+                    showingSheet = false
+                },
+                ActionSheetCardItem(sfSymbolName: "stop", label: "Stop", foregrounColor: Color.red) {
+                    print("Stop Tapped")
+                    showingSheet = false
+                },
+                ActionSheetCardItem(sfSymbolName: "record.circle", label: "Record")
+            ],
+            outOfFocusOpacity: 0.2
+        )
     }
     
     var body: some View {
