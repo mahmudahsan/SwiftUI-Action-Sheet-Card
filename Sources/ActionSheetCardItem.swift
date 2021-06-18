@@ -26,7 +26,11 @@ import SwiftUI
 
 public struct ActionSheetCardItem: View {
     let id = UUID()
-    let sfSymbolName: String?
+    let systemIconName: String?
+    let iconSize: CGFloat?
+    let iconVerticalPadding: CGFloat?
+    let iconLeadingPadding: CGFloat?
+    let iconTrailingPadding: CGFloat?
     let label: String
     let labelFont: Font
     let foregrounColor: Color
@@ -34,14 +38,22 @@ public struct ActionSheetCardItem: View {
     let callback: (() -> ())?
     
     public init(
-        sfSymbolName: String? = nil,
+        systemIconName: String? = nil,
+        iconSize: CGFloat? = nil,
+        iconVerticalPadding: CGFloat? = nil,
+        iconLeadingPadding: CGFloat? = nil,
+        iconTrailingPadding: CGFloat? = nil,
         label: String,
         labelFont: Font = Font.headline,
         foregrounColor: Color = Color.primary,
         foregroundInactiveColor: Color = Color.gray,
         callback: (() -> ())? = nil
     ) {
-        self.sfSymbolName = sfSymbolName
+        self.systemIconName = systemIconName
+        self.iconSize = iconSize
+        self.iconVerticalPadding = iconVerticalPadding
+        self.iconLeadingPadding = iconLeadingPadding
+        self.iconTrailingPadding = iconTrailingPadding
         self.label = label
         self.labelFont = labelFont
         self.foregrounColor = foregrounColor
@@ -49,20 +61,25 @@ public struct ActionSheetCardItem: View {
         self.callback = callback
     }
     
-    var buttonView: some View {
-        HStack {
-            if let sfSymbolName = sfSymbolName {
+    var icon: some View {
+        Group {
+            if let sfSymbolName = systemIconName {
                 Image(systemName: sfSymbolName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width:19, height: 19)
-                    .padding(.vertical)
-                    .padding(.horizontal, 10)
+                    .frame(width:iconSize ?? 19, height: iconSize ?? 19)
+                    .padding(.vertical, iconVerticalPadding)
+                    .padding(.leading, iconLeadingPadding ?? 18)
+                    .padding(.trailing, iconTrailingPadding ?? 13)
             }
-            
+        }
+    }
+    
+    var buttonView: some View {
+        HStack (spacing: 0){
+            icon
             Text(label)
                 .font(labelFont)
-            
             Spacer()
         }
     }
@@ -89,16 +106,23 @@ struct ActionSheetCardItem_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             Spacer()
-            ActionSheetCardItem(sfSymbolName: "play", label: "Play") {
-                //
+            VStack (spacing: 0){
+                ActionSheetCardItem(systemIconName: "play", label: "Play") {
+                    //
+                }
+                
+                Divider()
+                
+                ActionSheetCardItem(systemIconName: "stop", label: "Stop") {
+                    //
+                }
+                
+                Divider()
+                
+                ActionSheetCardItem(systemIconName: "record.circle", label: "Record")
             }
-            
-            ActionSheetCardItem(sfSymbolName: "stop", label: "Stop") {
-                //
-            }
-            
-            ActionSheetCardItem(sfSymbolName: "record.circle", label: "Record")
-            Spacer()
+            .background(Color.white)
         }
+        .background(Color.gray)
     }
 }
